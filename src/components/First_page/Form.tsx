@@ -1,12 +1,9 @@
 import { Container, Button, Box, TextField } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { LoginUser } from "../../module/Interfaces";
 interface FormData {
-  user: {
-    username: string;
-    phone: number | string;
-    email: string;
-  };
+  user:LoginUser 
 }
 const Form: React.FC = () => {
   const navigate = useNavigate();
@@ -25,13 +22,11 @@ const Form: React.FC = () => {
         [event.target.name]: event.target.value,
       },
     });
-    console.log(event);
-    
   };
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>): void => {
     event.preventDefault();
-    console.log("user", state);
+    // console.log("user", state);
     localStorage.setItem("user", JSON.stringify(state.user));
     setstate({
       user: {
@@ -43,7 +38,7 @@ const Form: React.FC = () => {
     navigate("/second");
   };
   return (
-    <Container sx={{ border: 2, bgcolor: "antiquewhite", p: 3 }}>
+    <Container sx={{ border: 2, bgcolor: "antiquewhite", p: 3  }}>
       <Box
         sx={{
           "& .MuiTextField-root": {
