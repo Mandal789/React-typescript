@@ -100,7 +100,7 @@ const Department = () => {
       ...state,
       [event.target.name]: event.target.checked,
     });
-    setAllcheck(false);
+    setAllcheck(true);
   };
 
   const designDepartment = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -109,7 +109,7 @@ const Department = () => {
       [event.target.name]: event.target.checked,
       
     });
-    setAllcheck1(false);
+    setAllcheck1(true);
   };
 
   const checkAlldepart = () => {
