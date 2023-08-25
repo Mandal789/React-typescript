@@ -73,7 +73,6 @@ const APIComponent = () => {
   );
 };
 
-
 //**********************************Second Component************************************* */
 const Department = () => {
   const [AllCheck, setAllcheck] = React.useState<boolean>(true);
@@ -92,7 +91,6 @@ const Department = () => {
     web_design: false,
   });
 
-  
   const customer_serviceDepartment = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -107,7 +105,6 @@ const Department = () => {
     setState1({
       ...state1,
       [event.target.name]: event.target.checked,
-      
     });
     setAllcheck1(true);
   };
@@ -127,7 +124,6 @@ const Department = () => {
       setexpand(false);
     }
     setAllcheck(!AllCheck);
-    
   };
 
   const checkAlldepart1 = () => {
@@ -157,15 +153,26 @@ const Department = () => {
     setexpand1(!expand1);
   };
 
-  
   const { support, customer_success } = state;
+
+  React.useMemo(
+    () =>
+      support && customer_success ? setAllcheck(false) : console.log("hello"),
+    [support, customer_success]
+  );
+
   const { graphic_design, product_design, web_design } = state1;
+  React.useMemo(
+    () =>
+      graphic_design && product_design && web_design ? setAllcheck1(false) : "",
+    [graphic_design, product_design, web_design]
+  );
 
   return (
     <Box sx={{ display: "flex", flexDirection: "rows", gap: 10 }}>
       <Box>
         <ListItemIcon onClick={expandHandler1}>
-          <HorizontalRuleIcon sx={{ marginRight: 3 ,cursor:'pointer' }} />
+          <HorizontalRuleIcon sx={{ marginRight: 3, cursor: "pointer" }} />
         </ListItemIcon>
         <FormControlLabel
           label="customer_service"
@@ -210,7 +217,7 @@ const Department = () => {
         </Collapse>
 
         <ListItemIcon onClick={expandHandler2}>
-          <HorizontalRuleIcon sx={{ marginRight: 3 ,cursor:'pointer'}} />
+          <HorizontalRuleIcon sx={{ marginRight: 3, cursor: "pointer" }} />
         </ListItemIcon>
         <FormControlLabel
           sx={{ marginRight: 12 }}
