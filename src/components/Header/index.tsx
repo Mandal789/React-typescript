@@ -13,7 +13,7 @@ const NavBar: React.FC = () => {
     if (localStorage.getItem("user")) {
       setexits(true);
     } else {
-      alert("enter details first");
+      //alert("enter details first");
       setexits(false);
     }
   },[])
