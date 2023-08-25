@@ -53,7 +53,7 @@ const APIComponent = () => {
   ];
   return (
     <>
-      <Box sx={{ height: 400, width: "100%" }}>
+      <Box sx={{ height: 420, width: "100%" }}>
         <DataGrid
           rows={rows[0]}
           columns={columns}
@@ -157,7 +157,7 @@ const Department = () => {
 
   React.useMemo(
     () =>
-      support && customer_success ? setAllcheck(false) : console.log("hello"),
+      support && customer_success ? setAllcheck(false) : "",
     [support, customer_success]
   );
 
