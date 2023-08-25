@@ -1,13 +1,22 @@
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import CssBaseline from "@mui/material/CssBaseline";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Toolbar from "@mui/material/Toolbar";
 
 import { NavLink } from "react-router-dom";
 
 const NavBar: React.FC = () => {
   const [exists, setexits] = useState<boolean>();
+
+  useEffect(()=>{
+    if (localStorage.getItem("user")) {
+      setexits(true);
+    } else {
+      alert("enter details first");
+      setexits(false);
+    }
+  },[])
   const hello = () => {
     if (localStorage.getItem("user")) {
       setexits(true);

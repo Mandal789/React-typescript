@@ -92,6 +92,7 @@ const Department = () => {
     web_design: false,
   });
 
+  
   const customer_serviceDepartment = (
     event: React.ChangeEvent<HTMLInputElement>
   ) => {
@@ -117,14 +118,16 @@ const Department = () => {
         support: true,
         customer_success: true,
       });
+      setexpand(true);
     } else {
       setState({
         support: false,
         customer_success: false,
       });
+      setexpand(false);
     }
     setAllcheck(!AllCheck);
-    setexpand(!expand);
+    
   };
 
   const checkAlldepart1 = () => {
@@ -134,14 +137,15 @@ const Department = () => {
         product_design: true,
         web_design: true,
       });
+      setexpand1(true);
     } else {
       setState1({
         graphic_design: false,
         product_design: false,
         web_design: false,
       });
+      setexpand1(false);
     }
-    setexpand1(!expand1);
     setAllcheck1(!AllCheck1);
   };
 
