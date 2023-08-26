@@ -1,9 +1,9 @@
-import { Container, Button, Box, TextField } from "@mui/material";
+import { Container, Button, Box, TextField, Typography } from "@mui/material";
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { LoginUser } from "../../module/Interfaces";
 interface FormData {
-  user:LoginUser 
+  user: LoginUser;
 }
 const Form: React.FC = () => {
   const navigate = useNavigate();
@@ -38,7 +38,8 @@ const Form: React.FC = () => {
     navigate("/second");
   };
   return (
-    <Container sx={{ border: 2, bgcolor: "antiquewhite", p: 3  }}>
+    <Container sx={{ border: 2, bgcolor: "antiquewhite", p: 3 }}>
+      <Typography variant="h6">Fill The Details</Typography>
       <Box
         sx={{
           "& .MuiTextField-root": {
