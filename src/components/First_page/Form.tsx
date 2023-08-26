@@ -89,7 +89,7 @@ const Form: React.FC = () => {
             type="submit"
             variant="contained"
             color="primary"
-            sx={{ "&:hover": { bgcolor: "darkgreen", color: "white" } }}
+            sx={{ width:220,"&:hover": { bgcolor: "darkgreen", color: "white" } }}
             fullWidth
           >
             submit
